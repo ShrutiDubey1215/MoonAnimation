@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader Animation</title>
+    <style>
+        body {
+            margin: 0;
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            background-color: rgb(1, 1, 14); /* Light background */
+        }
+
+        .loader {
+            width: 20rem;
+            aspect-ratio: 1;
+            background-color: rgb(16, 16, 58); /* Set color */
+            border-radius: 50%;
+            position: relative;
+            animation: loader 1s linear infinite;
+        }
+
+        .loader::before {
+            content: "";
+            width: 17rem;
+            aspect-ratio: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgb(1, 1, 14); /* Set color */
+            border-radius: 50%;
+        }
+
+        .loader::after {
+            content: "";
+            width: 5rem;
+            aspect-ratio: 1;
+            position: absolute;
+            top: -10%;
+            left: 35%;
+            border-radius: 50%;
+            box-shadow: 1px 1px 10px 10px blueviolet;
+            background-color: rgb(1, 1, 14); /* Set color */
+            /*inset: 1;*/
+        }
+
+        @keyframes loader {
+            100% {
+                transform: rotate(-360deg); /* Use transform for rotation */
+                box-shadow: 1px 1px 10px 5px rgba(62, 241, 229, 0.297); /* Optional glowing effect */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+</body>
+</html>
